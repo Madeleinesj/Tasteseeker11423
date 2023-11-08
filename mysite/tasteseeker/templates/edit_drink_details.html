@@ -1,0 +1,16 @@
+{% extends 'tasteseekerbase.html' %}
+
+{% block content %}
+<h1>Edit Entry</h1>
+
+<div class="edit-entry">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">Edit</button>
+        <button type="button"><a href="{% url 'tasteseeker_deleteentry' task.id %}">Delete</a></button>
+    </form>
+
+    </div>
+{% endblock %}

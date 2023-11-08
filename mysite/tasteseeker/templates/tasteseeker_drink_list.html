@@ -1,0 +1,27 @@
+{% extends 'tasteseekerbase.html' %}
+
+{% block content %}
+
+    <h1>View all cocktail entries here</h1>
+
+{% for Cocktail in drink_list %}
+<pre>
+
+<ul style="color:white" class="text">
+    <li><a href="{% url 'tasteseeker_search' Cocktail.id  %}"> {{ Cocktail.CocktailName }}({{ Cocktail.Type }}), {{ Cocktail.City }}, {{ Cocktail.State }}</a></li>
+
+
+
+
+
+</ul>
+</pre>
+        {% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

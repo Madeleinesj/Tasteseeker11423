@@ -1,0 +1,29 @@
+{% extends 'tasteseekerbase.html' %}
+{% block title %}Drinks List{% endblock %}
+{% block content %}
+
+{% for Cocktail in obj %}
+
+<h1>{{ Cocktail.CocktailName }}({{ Cocktail.Type }})</h1>
+
+
+
+
+
+
+<h1>from {{ Cocktail.Bar_or_Restaurant }}</h1>
+
+<h1>in {{ Cocktail.City }},{{ Cocktail.State }}</h1>
+<h1>"{{ Cocktail.Description }}" - {{ Cocktail.User }} </h1>
+<h1>${{ Cocktail.Price }}</h1>
+<button><a href="{% url 'edit_drink_details' Cocktail.id %}">Edit</a></button>
+
+{% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

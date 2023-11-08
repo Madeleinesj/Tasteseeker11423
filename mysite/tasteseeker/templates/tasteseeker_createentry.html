@@ -1,0 +1,18 @@
+
+
+{% extends 'tasteseekerbase.html' %}
+
+{% block content %}
+
+<div class="new-entry-form">
+    <h1>Tell us about your Cocktail!</h1>
+    <form name="NewEntryForm" method="POST" action=" ">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit" class="btn">SUBMIT</button>
+
+        </form>
+
+</div>
+
+{% endblock %}

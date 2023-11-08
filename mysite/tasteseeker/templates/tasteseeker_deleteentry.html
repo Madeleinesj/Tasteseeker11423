@@ -1,0 +1,16 @@
+{% extends 'tasteseekerbase.html' %}
+
+{% block content %}
+<h1>Delete Entry</h1>
+
+<div class="delete-entry">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+         <h3>Permanently remove drink from the list: ?</h3>
+        <br>
+        <button type="submit">Delete</button>
+    </form>
+    <button><a href="{% url 'tasteseeker_drink_list.html' %}">Return</a></button>
+    </div>
+{% endblock %}
