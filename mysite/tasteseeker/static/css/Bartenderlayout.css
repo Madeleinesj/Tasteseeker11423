@@ -1,21 +1,16 @@
 
-@font-face {
-  font-family:'RubikDoodle';
-  src: url('/tasteseeker/static/css/RubikDoodleShadow-Regular.ttf');
-}
 
-h1  {
-    font-family: RubikDoodle;
+
+h1 {
+    font-family: 'RubikDoodleShadow-Regular';
+    src: url('/tasteseeker/static/css/RubikDoodleShadow-Regular.ttf');
     font-size: 24px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
     line-height: 26.4px;
     text-align: center;
-    color: rgb(232, 82, 82);
     }
-
-
 h3 {
     font-family: 'RubikDoodleShadow-Regular';
     src: url('/tasteseeker/static/css/RubikDoodleShadow-Regular.ttf');
@@ -39,7 +34,7 @@ p {
 
 
 body {
-    background-image: linear-gradient(to top, #f6ebf1 0%, #ece0e0 100%);
+    background-image: linear-gradient(to top, #f6ebf1 0%, #d64949 100%);
 
 }
 
@@ -50,7 +45,6 @@ body {
     }
 
 ul {
-  font-family: RubikDoodle;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -62,7 +56,8 @@ ul {
 
 li {
   float: left;
-  font-family: RubikDoodle;
+  font-family: 'RubikDoodleShadow-Regular';
+  src: url('/tasteseeker/static/css/RubikDoodleShadow-Regular.ttf');
   font-size: 20px;
   color:white;
 
@@ -77,7 +72,7 @@ li a {
 }
 
 li a:hover {
-  background-color:  #ece0e0;
+  background-color: white;
 }
 
 ul a:hover {

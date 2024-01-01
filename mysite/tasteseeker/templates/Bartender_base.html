@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <title>{% block title %} TasteSeeker {% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/tasteseeker/static/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Bartenderlayout.css' %}">
         <div style="text-align: center"><img src="{% static 'Images/drinks2.jpg' %}" width="500" /></div>
     </head>
     <body>
@@ -17,7 +17,7 @@
 
     </div>
         <div class="page_container">
-            {% include "seeker_navbar.html" %}
+            {% include "tasteseeker_navbar.html" %}
 
             <header class="header-title">
                 <h1>{% block header %}{% endblock %}</h1>
@@ -27,7 +27,7 @@
             {% block content %}
             {% endblock %}
         </div>
-            {% include "seeker_footer.html" %}
+            {% include "tasteseeker_footer.html" %}
 
 
     </body>

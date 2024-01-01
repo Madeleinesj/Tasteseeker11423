@@ -7,22 +7,24 @@ from .forms import NewEntryForm
 from .models import Cocktail
 from django.contrib.auth.decorators import login_required
 import requests
+from django.http import HttpResponse
 
+#Seeker 
 
-def tasteseekerHome(request):
+def seeker_Home(request):
     user = request.user
     context = {'user': user}
-    return render(request, 'tasteseeker_home.html', context)
+    return render(request, 'seeker_home.html', context)
 
 
-def tasteseeker_createentry(request):
+def seeker_createentry(request):
     form = NewEntryForm(data=request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect('tasteseeker_createentry.html')
+            return redirect('seeker_createentry.html')
     content = {'form': form}
-    return render(request, 'tasteseeker_createentry.html', content)
+    return render(request, 'seeker_createentry.html', content)
 
 
 def edit_drink_details(request, pk):
@@ -40,22 +42,24 @@ def edit_drink_details(request, pk):
         return render(request, 'edit_drink_details.html', )
 
 
-def tasteseeker_deleteentry(request, pk):
+def seeker_deleteentry(request, pk):
     pk = int(pk)
     task = get_object_or_404(Cocktail, pk=pk)
     if request.method == 'POST':
         task.delete()
-        return redirect('tasteseeker_drink_list')
+        return redirect('seeker_drink_list')
     content = {
         'task': task
     }
 
-    return render(request, 'tasteseeker_drink_list', content)
+    return render(request, 'seeker_drink_list', content)
 
-def tasteseeker_drink_list(request):
+def seeker_drink_list(request):
     drink_list = Cocktail.objects.all()
-    return render(request, 'tasteseeker_drink_list.html',
+    return render(request, 'seeker_drink_list.html',
                   {'drink_list': drink_list})
+
+#Both
 
 
 def tasteseeker_search(request, pk):
@@ -70,3 +74,14 @@ def tasteseeker_search(request, pk):
 
 def LogIn(request):
     return render(request, "LogIn.html")
+
+def tasteseekerintropick(request, pk):
+    user = request.user
+    context = {'user': user}
+    return render(request, 'tasteseekerintropick.html', context)
+
+def about(request):
+    return HttpResponse('about')
+
+
+#Bartender
