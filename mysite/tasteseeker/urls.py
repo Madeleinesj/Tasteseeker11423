@@ -7,10 +7,19 @@ from .views import tasteseeker_search
 
 urlpatterns = [
 
+    # Sets the url path to the landing page
+    path('Index/', views.Index, name='Index'),
+    # Sets the url path to the registration page
+    path('register', views.register, name="register"),
+    # Sets the url path to the login page
+    path('login', views.login, name="login"),
+    # Sets the url path to the landing page after the user clicks on logout
+    path('logout', views.logout, name="logout"),
+    # Sets the url path to the admin page
     path('admin/', admin.site.urls),
-    # Sets the url path to the home page seeker_home.html
-    path(r'^seeker_home/$', views.seeker_Home, name="seeker_home"),
-    # Sets the url path to the entry page tasteseeker_createentry.html
+    # Sets the url path to the Seeker homepage
+    path('seeker_home/', views.seeker_home, name="seeker_home"),
+    # Sets the url path to the page to create a drink rating
     path('seeker_createentry/', views.seeker_createentry, name="seeker_createentry"),
     # Sets the url path to the drink list page tasteseeker_drink_list.html
     path('seeker_drink_list/', views.seeker_drink_list, name='seeker_drink_list'),
@@ -20,10 +29,9 @@ urlpatterns = [
     path('<int:pk>/edit_drink_details/', views.edit_drink_details, name='edit_drink_details'),
     # Sets the url path to the details of one entry via a link when the user clicks the drink name
     path('<int:pk>/tasteseeker_search/', views.tasteseeker_search, name='tasteseeker_search'),
-    # Sets the url path to the login page
-    path('LogIn/', views.LogIn, name='LogIn'),
-    # Sets the url path to the first intro page/ bartender or drinker
-    path('<int:pk>/tasteseekerintropick/', views.tasteseekerintropick, name='tasteseekerintropick'),
+    # Sets the url path to the About Us page 
+    path('AboutUs/', views.AboutUs, name='AboutUs'),
+
     
 
 

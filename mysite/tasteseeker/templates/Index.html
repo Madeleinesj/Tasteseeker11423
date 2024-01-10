@@ -1,6 +1,6 @@
 {% load static %}
-
-
+{% block content %}
+<!-- Log in page-->
 <html lang="en" class="bg-img">
     <head>
         <meta charset="UTF-8">
@@ -13,21 +13,23 @@
 
         <div class="text-center">
 
-        <!-- Add a template to the href so the button works-->
+            {% block header %}<h1>Welcome to TasteSeeker! </h1><br>{% endblock %}
 
-    </div>
+            <ul class="topnav">
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+
+            </ul>
+            <br>
+          
+            </div>
         <div class="page_container">
-            {% include "seeker_navbar.html" %}
-
-            <header class="header-title">
-                <h1>{% block header %}Tasteseeker{% endblock %}</h1>
-            </header>
-
-
-           
+            
+            {% endblock %}
         </div>
             {% include "seeker_footer.html" %}
 
 
     </body>
 </html>
+

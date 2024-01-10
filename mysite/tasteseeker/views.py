@@ -6,12 +6,13 @@ from datetime import datetime, timezone
 from .forms import NewEntryForm
 from .models import Cocktail
 from django.contrib.auth.decorators import login_required
-import requests
 from django.http import HttpResponse
+from django.contrib.auth import logout
+from django.contrib.auth import login
 
 #Seeker 
 
-def seeker_Home(request):
+def seeker_home(request):
     user = request.user
     context = {'user': user}
     return render(request, 'seeker_home.html', context)
@@ -59,7 +60,7 @@ def seeker_drink_list(request):
     return render(request, 'seeker_drink_list.html',
                   {'drink_list': drink_list})
 
-#Both
+
 
 
 def tasteseeker_search(request, pk):
@@ -72,16 +73,27 @@ def tasteseeker_search(request, pk):
     return render(request, 'tasteseeker_search.html', context)
 
 
-def LogIn(request):
-    return render(request, "LogIn.html")
+def login(request):
+    return render(request, "login.html")
+
+def register(request):
+    return render(request, "register.html")
+
+def logout(request):
+    logout(request, "Index.html")
+
+def Index(request):
+    user = request.user
+    context = {'user': user}
+    return render(request, 'Index.html', context)
 
 def tasteseekerintropick(request, pk):
     user = request.user
     context = {'user': user}
     return render(request, 'tasteseekerintropick.html', context)
 
-def about(request):
-    return HttpResponse('about')
+def AboutUs(request):
+    return render(request, "AboutUs.html")
 
 
 #Bartender

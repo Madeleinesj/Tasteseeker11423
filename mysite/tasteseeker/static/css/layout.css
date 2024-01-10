@@ -6,7 +6,7 @@
 
 h1  {
     font-family: RubikDoodle;
-    font-size: 24px;
+    font-size: 40px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
@@ -17,22 +17,27 @@ h1  {
 
 
 h3 {
-    font-family: 'RubikDoodleShadow-Regular';
-    src: url('/tasteseeker/static/css/RubikDoodleShadow-Regular.ttf');
+    font-family: RubikDoodle;
     font-size: 14px;
     font-style: normal;
     font-variant: normal;
     font-weight: 700;
     line-height: 15.4px;
     }
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    }
+
 p {
-    font-family: 'RubikDoodleShadow-Regular';
-    src: url('/tasteseeker/static/css/RubikDoodleShadow-Regular.ttf');
+    font-family: RubikDoodle;
     font-size: 14px;
     font-style: normal;
     font-variant: normal;
     font-weight: 400;
     line-height: 20px;
+    color:#d64949
 
     }
 
@@ -40,6 +45,10 @@ p {
 
 body {
     background-image: linear-gradient(to top, #f6ebf1 0%, #ece0e0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 
 }
 
