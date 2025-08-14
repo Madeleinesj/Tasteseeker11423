@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <title>{% block title %} TasteSeeker {% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/tasteseeker/static/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}">
         <div style="text-align: center"><img src="{% static 'Images/drinks2.jpg' %}" width="500" /></div>
     </head>
     <body>
@@ -16,8 +16,8 @@
             {% block header %}<h1>Welcome to TasteSeeker! </h1><br>{% endblock %}
 
             <ul class="topnav">
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="{% url 'tasteseeker:register' %}">Register</a></li>
+                <li><a href="{% url 'tasteseeker:login' %}">Login</a></li>
 
             </ul>
             <br>
@@ -27,7 +27,7 @@
             
             {% endblock %}
         </div>
-            {% include "seeker_footer.html" %}
+            {% include "partials/seeker_footer.html" %}
 
 
     </body>

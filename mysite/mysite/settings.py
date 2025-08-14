@@ -122,8 +122,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static/css"),
-    'var/www/static',
+    os.path.join(BASE_DIR, "static"),
+    'tasteseeker/static',
 ]
 
 FIXTURE_DIRS = (

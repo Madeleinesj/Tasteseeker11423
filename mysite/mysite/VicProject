@@ -1,0 +1,51 @@
+
+#******************************************************************************
+# Author:           Victoria Kisler
+# Assignment:       3
+# Date:             3/1/2024
+# Description:      A program to inventory items and their prices for a boutique owner
+# Input:            Items and Prices
+# Output:           The highest and lowest priced items.
+# Sources:          Information from the course chapter in D2L.
+#******************************************************************************
+
+#main function
+def main():
+    Inventory = []
+    Prices = []
+    entry = 'yes'
+    while entry == 'yes':
+        addItem(Inventory, Prices)
+        entry = moreEntries()
+    printLists(Inventory, Prices)
+
+
+
+#creating the lists
+def addItem(Inventory, Prices):
+    anItem = ""
+    aPricetag = 0.0
+
+#starting the input of items
+    anItem = input("Enter an item: ")
+    aPricetag = float(input("Item pricetag: "))
+
+#update lists with user input
+    item.append(anItem)
+    price.append(aPricetag)
+
+#prompt user for more input
+def moreEntries():
+    entry = (input("Add another? (yes/no): "))
+    while entry.lower() != 'yes' and entry.lower() != 'no':
+        print("Invalid entry. Please type 'yes' or 'no' .")
+        entry = (input("Add another? (yes/no): "))
+        return entry
+    #we just sent the user back up to enter more items
+
+#welcome message
+print("Hello and welcome to your Boutique Inventory Organizer!")
+print("\nPlease enter the items and their costs into the designated spaces.")
+print("\nThis will help you keep track of the price range of items you sell.")
+print("\nWe will also share the highest and lowest priced items in your log.\n")
+print("Shall we get started?\n")

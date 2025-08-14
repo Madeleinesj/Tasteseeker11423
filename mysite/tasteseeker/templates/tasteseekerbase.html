@@ -1,33 +1,29 @@
 {% load static %}
-
-
+<!doctype html>
 <html lang="en" class="bg-img">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %} TasteSeeker {% endblock %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/tasteseeker/static/css/layout.css">
-        <div style="text-align: center"><img src="{% static 'Images/drinks2.jpg' %}" width="500" /></div>
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TasteSeeker{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+  </head>
+  <body>
 
-        <div class="text-center">
-
-        <!-- Add a template to the href so the button works-->
-
+    <div style="text-align:center">
+      <img src="{% static 'Images/drinks2.jpg' %}" width="500" alt="Drinks">
     </div>
-        <div class="page_container">
-            {% include "seeker_navbar.html" %}
 
-            <header class="header-title">
-                <h1>{% block header %}Tasteseeker{% endblock %}</h1>
-            </header>
+    {% include "partials/seeker_navbar.html" %}
 
+    <header class="header-title">
+      <h1>{% block header %}Tasteseeker{% endblock %}</h1>
+    </header>
 
-           
-        </div>
-            {% include "seeker_footer.html" %}
+    <div class="page_container">
+      {% block content %}{% endblock %}
+    </div>
 
+    {% include "partials/seeker_footer.html" %}
 
-    </body>
+  </body>
 </html>
